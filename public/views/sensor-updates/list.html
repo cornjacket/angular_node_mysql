@@ -1,0 +1,11 @@
+<section data-ng-controller="SensorUpdatesController" data-ng-init="find()">
+	<ul class="articles unstyled">
+		<h2>Node ID             Node Data         Updated At</h2>
+		<li data-ng-repeat="sensorUpdate in sensorUpdates">
+			<span>{{sensorUpdate.nodeId}}</span> 
+			<span><a data-ng-href="#!/sensorUpdates/{{sensorUpdate.id}}">{{sensorUpdate.data}}</a></span>
+			<span>{{sensorUpdate.updatedAt  | date:'medium'}}</span>
+		</li>
+	</ul>
+	<h1 data-ng-hide="!sensorUpdates || sensorUpdates.length">No Sensor Updates. <br></h1>
+</section>
