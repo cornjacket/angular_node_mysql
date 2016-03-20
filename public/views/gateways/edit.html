@@ -1,0 +1,45 @@
+<section data-ng-controller="GatewaysController" data-ng-init="findOne()">
+	<form class="form-horizontal" data-ng-submit="update()">
+		<div class="control-group">
+			<label class="control-label" for="name">Name</label>
+
+			<div class="controls">
+				<input type="text" data-ng-model="gateway.name" id="name" placeholder="Name" required>
+				</input>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="lat">Latitude</label>
+
+			<div class="controls">
+				<input type="number" data-ng-model="gateway.lat" id="lat" placeholder="Latitude" required>
+				</input>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="lon">Longitude</label>
+
+			<div class="controls">
+				<input type="number" data-ng-model="gateway.lon" id="lon" placeholder="Longitude" required>
+				</input>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="name">Logical ID</label>
+			<div class="controls">
+				<input type="text" data-ng-model="gateway.logicalId" id="logicalId" placeholder="Logical ID" required>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="name">Logical ID</label>
+			<div class="controls">
+				<input type="text" data-ng-model="gateway.ipAddress" id="ipAddress" placeholder="IP Address" required>
+			</div>
+		</div>	
+		<div class="control-group">
+			<div class="controls">
+				<input type="submit" class="btn">
+			</div>
+		</div>
+	</form>
+</section>

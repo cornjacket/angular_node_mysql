@@ -1,0 +1,15 @@
+<section data-ng-controller="RanchesController" data-ng-init="findOne()">
+    <span>{{ranch.updatedAt | date:'medium'}}</span>/
+    <span>{{ranch.User.name}}</span>
+    <h2>{{ranch.name}}</h2>
+    <div data-ng-show="global.user.id == ranch.User.id">
+        <a class="btn" href="/#!/ranches/{{ranch.id}}/edit">
+        	Edit
+        </a> 
+        <a class="btn" data-ng-click="remove();">
+            Delete
+        </a>
+    </div>
+    <div>{{ranch.lat}}</div>
+    <div>{{ranch.lon}}</div>
+</section>

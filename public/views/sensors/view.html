@@ -1,0 +1,16 @@
+<section data-ng-controller="SensorsController" data-ng-init="findOne()">
+    <span>{{sensor.updatedAt | date:'medium'}}</span>/
+    <!--<span>{{sensor.Gateway.name}}</span> / -->
+    <!-- <span>{{sensor.Gateway.Ranch.name}}</span> THIS DOES NOT WORK. TBD -->
+    <h2>{{sensor.name}}</h2>
+    <div> <!-- data-ng-show="global.user.id == ranch.User.id"> not sure what i want to do here there is not gateway.User.id, maybe I need a global.ranch.id, but -->
+        <a class="btn" href="/#!/sensor/{{sensor.id}}/edit">
+        	Edit
+        </a> 
+    </div>
+    <div>Latitude: {{sensor.lat}}</div>
+    <div>Longitude: {{sensor.lon}}</div>
+    <div>Ranch ID: {{sensor.GatewayId}}</div>
+	<div>Logical ID: {{sensor.logicalId}}</div>
+
+</section>

@@ -1,0 +1,39 @@
+<section data-ng-controller="GatewaysController">
+	<form class="form-horizontal" data-ng-submit="create()">
+		<div class="control-group">
+			<label class="control-label" for="name">Name</label>
+			<div class="controls">
+				<input type="text" data-ng-model="name" id="name" placeholder="Name" required>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="lat">Latitude</label>
+			<div class="controls">
+				<input type="number" data-ng-model="lat" id="lat" placeholder="Latitude" required>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="lon">Longitude</label>
+			<div class="controls">
+				<input type="number" data-ng-model="lon" id="lon" placeholder="Longitude" required>
+			</div>
+		</div>		
+		<div class="control-group">
+			<label class="control-label" for="name">Logical ID</label>
+			<div class="controls">
+				<input type="text" data-ng-model="logicalId" id="logicalId" placeholder="Logical ID" required>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="name">IP Address</label>
+			<div class="controls">
+				<input type="text" data-ng-model="ipAddress" id="ipAddress" placeholder="IP Address" required>
+			</div>
+		</div>			
+		<div class="control-group">
+			<div class="controls">
+				<input type="submit" class="btn">
+			</div>
+		</div>
+	</form>
+</section>

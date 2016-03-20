@@ -1,0 +1,31 @@
+<section data-ng-controller="RanchesController" data-ng-init="find()">
+
+	<div data-ng-show="!ranches || ranches.length" class="container">
+	  <h2 class="text-center">Ranches</h2>
+	  <div class="table-responsive">
+		  <table class="table table-hover">
+		    <thead>
+		      <tr>
+		        <th>ID</th>
+		        <th>Name</th>
+		        <th>User</th>
+		        <th>Latitude</th>
+		        <th>Longitude</th>
+		        <th>Last Updated</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		      <tr data-ng-repeat="ranch in ranches">
+		        <td>{{ranch.id}}</td>
+		        <td><a data-ng-href="#!/ranches/{{ranch.id}}">{{ranch.name}}</a></td>
+		        <td>{{ranch.User.name}}</td>
+		        <td>{{ranch.lat}}</td>
+		        <td>{{ranch.lon}}</td>
+		        <td>{{ranch.updatedAt | date:'medium'}}</td>
+		      </tr>
+		    </tbody>
+		  </table>
+	  </div>
+	</div>
+	<h2 data-ng-hide="!ranches || ranches.length">No ranches yet. <br> Why don't you <a href="/#!/ranches/create">Create One</a>?</h2>
+</section>

@@ -1,0 +1,34 @@
+<section data-ng-controller="SensorsController" data-ng-init="find()">
+
+	<div data-ng-show="!sensors || sensors.length" class="container">
+	  <h2 class="text-center">Sensors</h2>
+	  <div class="table-responsive">
+		  <table class="table table-hover">
+		    <thead>
+		      <tr>
+		        <th>ID</th>
+		        <th>Name</th>
+		        <th>Gateway Name</th>
+		        <th>Latitude</th>
+		        <th>Longitude</th>
+		        <th>Logical ID</th>
+		        <th>Last Updated</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		      <tr data-ng-repeat="sensor in sensors">
+		        <td>{{sensor.id}}</td>
+		        <td>{{sensor.name}}</a></td>
+		        <!--<td><a data-ng-href="#!/sensors/{{sensor.id}}">{{sensor.name}}</a></td> DRT - This is broken. Don't know why -->
+		        <td>{{sensor.Gateway.name}}</td>
+		        <td>{{sensor.lat}}</td>
+		        <td>{{sensor.lon}}</td>
+		        <td>{{sensor.logicalId}}</td>
+		        <td>{{sensor.updatedAt | date:'medium'}}</td>
+		      </tr>
+		    </tbody>
+		  </table>
+	  </div>
+	</div>
+	<h2 data-ng-hide="!sensors || sensors.length">No sensors yet. <br> Why don't you <a href="/#!/sensors/create">Create One</a>?</h2>
+</section>

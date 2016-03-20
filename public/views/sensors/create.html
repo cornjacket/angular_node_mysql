@@ -1,0 +1,43 @@
+<section data-ng-controller="SensorsController">
+	<form class="form-horizontal" data-ng-submit="create()">
+		<div class="control-group">
+			<label class="control-label" for="name">Name</label>
+			<div class="controls">
+				<input type="text" data-ng-model="name" id="name" placeholder="Name" required>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="macAddress">MAC Address</label>
+			<div class="controls">
+				<input type="text" data-ng-model="macAddress" id="macAddress" placeholder="MAC Address" required>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="name">Logical ID</label>
+			<div class="controls">
+				<input type="text" data-ng-model="logicalId" id="logicalId" placeholder="Logical ID" required>
+			</div>
+		</div>		
+		<div class="control-group">
+			<label class="control-label" for="lat">Latitude</label>
+			<div class="controls">
+				<input type="number" data-ng-model="lat" id="lat" placeholder="Latitude" required>
+			</div>
+		</div>		
+		<div class="control-group">
+			<label class="control-label" for="lon">Longitude</label>
+			<div class="controls">
+				<input type="number" data-ng-model="lon" id="lon" placeholder="Longitude" required>
+			</div>
+		</div>		
+
+        <!-- I AM NOT ALLOWING THE GATEWAYID TO BE SET BY THE USER, AT LEAST NOT FOR NOW. MAYBE LATER. RIGHT NOW IT IS
+             HARDCODED IN THE CONTROLLER -->
+
+		<div class="control-group">
+			<div class="controls">
+				<input type="submit" class="btn">
+			</div>
+		</div>
+	</form>
+</section>

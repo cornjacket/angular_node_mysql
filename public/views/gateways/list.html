@@ -1,0 +1,35 @@
+<section data-ng-controller="GatewaysController" data-ng-init="find()">
+
+	<div data-ng-show="!gateways || gateways.length" class="container">
+	  <h2 class="text-center">Gateways</h2>
+	  <div class="table-responsive">
+		  <table class="table table-hover">
+		    <thead>
+		      <tr>
+		        <th>ID</th>
+		        <th>Name</th>
+		        <th>Ranch Name</th>
+		        <th>Latitude</th>
+		        <th>Longitude</th>
+		        <th>Logical ID</th>
+		        <th>IP Address</th>
+		        <th>Last Updated</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		      <tr data-ng-repeat="gateway in gateways">
+		        <td>{{gateway.id}}</td>
+		        <td><a data-ng-href="#!/gateways/{{gateway.id}}">{{gateway.name}}</a></td>
+		        <td>{{gateway.Ranch.name}}</td>
+		        <td>{{gateway.lat}}</td>
+		        <td>{{gateway.lon}}</td>
+		        <td>{{gateway.logicalId}}</td>
+		        <td>{{gateway.ipAddress}}</td>
+		        <td>{{gateway.updatedAt | date:'medium'}}</td>
+		      </tr>
+		    </tbody>
+		  </table>
+	  </div>
+	</div>
+	<h2 data-ng-hide="!gateways || gateways.length">No gateways yet. <br> Why don't you <a href="/#!/gateways/create">Create One</a>?</h2>
+</section>

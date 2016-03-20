@@ -4,8 +4,8 @@ module.exports = function(sequelize, DataTypes) {
 
 	//var SensorUpdate = sequelize.define('sensorData', {
 	var SensorUpdate = sequelize.define('SensorUpdate', {
-			nodeId: DataTypes.STRING,
-			data:  DataTypes.STRING //TEXT
+			data:  DataTypes.STRING, //TEXT
+			SensorId: DataTypes.INTEGER
 		}/*,
 		{
 			associate: function(models){

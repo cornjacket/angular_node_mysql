@@ -1,0 +1,33 @@
+<section data-ng-controller="RanchesController" data-ng-init="findOne()">
+	<form class="form-horizontal" data-ng-submit="update()">
+		<div class="control-group">
+			<label class="control-label" for="name">Name</label>
+
+			<div class="controls">
+				<input type="text" data-ng-model="ranch.name" id="name" placeholder="Name" required>
+				</input>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="lat">Latitude</label>
+
+			<div class="controls">
+				<input type="number" data-ng-model="ranch.lat" id="lat" placeholder="Latitude" required>
+				</input>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="lon">Longitude</label>
+
+			<div class="controls">
+				<input type="number" data-ng-model="ranch.lon" id="lon" placeholder="Longitude" required>
+				</input>
+			</div>
+		</div>		
+		<div class="control-group">
+			<div class="controls">
+				<input type="submit" class="btn">
+			</div>
+		</div>
+	</form>
+</section>

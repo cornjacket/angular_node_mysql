@@ -1,0 +1,45 @@
+<section data-ng-controller="SensorsController" data-ng-init="findOne()">
+	<form class="form-horizontal" data-ng-submit="update()">
+		<div class="control-group">
+			<label class="control-label" for="name">Name</label>
+
+			<div class="controls">
+				<input type="text" data-ng-model="sensor.name" id="name" placeholder="Name" required>
+				</input>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="macAddress">MAC Address</label>
+			<div class="controls">
+				<input type="number" data-ng-model="sensor.macAddress" id="macAddress" placeholder="MAC Address" required>
+			</div>
+		</div>		
+		<div class="control-group">
+			<label class="control-label" for="lat">Latitude</label>
+
+			<div class="controls">
+				<input type="number" data-ng-model="sensor.lat" id="lat" placeholder="Latitude" required>
+				</input>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="lon">Longitude</label>
+
+			<div class="controls">
+				<input type="number" data-ng-model="sensor.lon" id="lon" placeholder="Longitude" required>
+				</input>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="name">Logical ID</label>
+			<div class="controls">
+				<input type="text" data-ng-model="sensor.logicalId" id="logicalId" placeholder="Logical ID" required>
+			</div>
+		</div>
+		<div class="control-group">
+			<div class="controls">
+				<input type="submit" class="btn">
+			</div>
+		</div>
+	</form>
+</section>

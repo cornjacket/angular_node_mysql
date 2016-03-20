@@ -1,0 +1,18 @@
+<section data-ng-controller="GatewaysController" data-ng-init="findOne()">
+    <span>{{gateway.updatedAt | date:'medium'}}</span>/
+    <span>{{gateway.Ranch.name}}</span>
+    <h2>{{gateway.name}}</h2>
+    <div> <!-- data-ng-show="global.user.id == ranch.User.id"> not sure what i want to do here there is not gateway.User.id, maybe I need a global.ranch.id, but -->
+        <a class="btn" href="/#!/gateway/{{gateway.id}}/edit">
+        	Edit
+        </a> 
+        <a class="btn" data-ng-click="remove();">
+            Delete
+        </a>
+    </div>
+    <div>Latitude: {{gateway.lat}}</div>
+    <div>Longitude: {{gateway.lon}}</div>
+    <div>Ranch ID: {{gateway.RanchId}}</div>
+	<div>Logical ID: {{gateway.logicalId}}</div>
+	<div>IP Address: {{gateway.ipAddress}}</div>
+</section>
