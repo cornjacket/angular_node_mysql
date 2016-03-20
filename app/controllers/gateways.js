@@ -32,7 +32,8 @@ exports.create = function(req, res) {
     // augment the gateway by adding the RanchId, should I add the userId also
     req.body.UserId = req.user.id;    // what about this, is this needed????????????? DRT
     console.log('DRT - Testing in app/controllers/gateways.js');
-    req.body.RanchId = 2; // 2 is Dave's ranch //req.ranch.id; // how does ranch get onto req <------------------- DRT ????????
+    console.log(req.body);
+    //req.body.RanchId = 2; // 2 is Dave's ranch //req.ranch.id; // how does ranch get onto req <------------------- DRT ????????
     // save and return and instance of article on the res object. 
     db.Gateway.create(req.body).then(function(gateway){
         if(!gateway){

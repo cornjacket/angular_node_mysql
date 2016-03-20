@@ -2,6 +2,7 @@ angular.module('mean.gateways').controller('GatewaysController', ['$scope', '$ro
     $scope.global = Global;
 
     $scope.create = function() {
+        console.log("GatewaysController.create() RanchId = "+this.RanchId);
         var gateway = new Gateways({
             name: this.name,
             lat: this.lat,
@@ -65,4 +66,21 @@ angular.module('mean.gateways').controller('GatewaysController', ['$scope', '$ro
             $scope.gateway = gateway;
         });
     };
+    
+    // return all gateways that match RanchId
+    $scope.findAllByRanchId = function(RanchId) {
+        Gateways.query(function(gateways) {
+            $scope.gateways = gateways.filter(function(gateway) {
+                return gateway.RanchId === RanchId;
+            });
+        });
+    };    
+    
+    
+    $scope.findRanches = function() {
+        Ranches.query(function(ranches) {
+            $scope.ranches = ranches;
+        });
+    };    
+    
 }]);

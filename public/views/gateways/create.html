@@ -1,4 +1,4 @@
-<section data-ng-controller="GatewaysController">
+<section data-ng-controller="GatewaysController" data-ng-init="findRanches()">
 	<form class="form-horizontal" data-ng-submit="create()">
 		<div class="control-group">
 			<label class="control-label" for="name">Name</label>
@@ -6,6 +6,15 @@
 				<input type="text" data-ng-model="name" id="name" placeholder="Name" required>
 			</div>
 		</div>
+		<div class="control-group">
+	    	<label class="control-label" for="ranchSelect">Ranch</label>
+	    	<div class="controls">
+	    		<select name="ranchSelect" data-ng-model="RanchId" required>
+	    			<option value="">Please select</option>
+	      			<option data-ng-repeat="ranch in ranches" value="{{ranch.id}}">{{ranch.name}}</option>
+	    		</select><br>		
+	    	</div>
+	    </div>
 		<div class="control-group">
 			<label class="control-label" for="lat">Latitude</label>
 			<div class="controls">

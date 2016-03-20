@@ -70,4 +70,22 @@ angular.module('mean.sensors').controller('SensorsController', ['$scope', '$rout
             $scope.sensor = sensor;
         });
     };
+    
+    $scope.findRanches = function() {
+        Ranches.query(function(ranches) {
+            $scope.ranches = ranches;
+        });
+    }; 
+    
+    // return all gateways that match RanchId
+    $scope.findGatewaysByRanchId = function() {
+        Gateways.query(function(gateways) {
+            console.log(gateways)
+            $scope.gateways = gateways.filter(function(gateway) {
+                return gateway.RanchId == $scope.RanchId;
+            });
+        });
+    };     
+    
+    
 }]);
