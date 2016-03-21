@@ -19,7 +19,7 @@
 		      <tr data-ng-repeat="sensor in sensors">
 		        <td>{{sensor.id}}</td>
 		        <td>{{sensor.name}}</a></td>
-		        <!--<td><a data-ng-href="#!/sensors/{{sensor.id}}">{{sensor.name}}</a></td> DRT - This is broken. Don't know why -->
+		        <!--<td><a data-ng-href="#!/sensors/{{sensor.id}}">{{sensor.name}}</a></td> Resource Error - received array instead of object -->
 		        <td>{{sensor.Gateway.name}}</td>
 		        <td>{{sensor.lat}}</td>
 		        <td>{{sensor.lon}}</td>

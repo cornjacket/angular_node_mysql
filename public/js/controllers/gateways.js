@@ -67,15 +67,6 @@ angular.module('mean.gateways').controller('GatewaysController', ['$scope', '$ro
         });
     };
     
-    // return all gateways that match RanchId
-    $scope.findAllByRanchId = function(RanchId) {
-        Gateways.query(function(gateways) {
-            $scope.gateways = gateways.filter(function(gateway) {
-                return gateway.RanchId === RanchId;
-            });
-        });
-    };    
-    
     
     $scope.findRanches = function() {
         Ranches.query(function(ranches) {

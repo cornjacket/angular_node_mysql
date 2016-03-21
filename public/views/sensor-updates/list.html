@@ -1,8 +1,44 @@
-<section data-ng-controller="SensorUpdatesController" data-ng-init="find()">
+<section data-ng-controller="SensorUpdatesController" data-ng-init="findSensorUpdatesAndRanches()"> <!--find()">-->
 	
-	<div data-ng-show="!sensorUpdates || sensorUpdates.length" class="container">
-	  <h2 class="text-center">Sensor Updates</h2>
-	  <div class="table-responsive">
+	
+	<div class="container">
+
+
+		<div class="control-group">
+			<label class="control-label" for="ranchSelect">Ranch</label>
+			<div class="controls">
+				<select name="ranchSelect" data-ng-model="RanchId" ng-change="findGatewaysByRanchId()" required>{{RanchId}}
+					<!--<option value="">Please select</option>-->
+					<option selected value="All">All Ranches</option>
+		  			<option data-ng-repeat="ranch in ranches" value="{{ranch.id}}">{{ranch.name}}</option>
+				</select>		
+			</div>
+		</div>	  
+
+		<div class="control-group">
+	    	<label class="control-label" for="gatewaySelect">Gateway</label>
+	    	<div class="controls">
+	    		<select name="gatewaySelect" data-ng-model="GatewayId" ng-change="findSensorsByGatewayId()" required>
+	    			<!--<option value="">Please select</option>-->
+	    			<option selected value="All">All Gateways</option>
+	      			<option data-ng-repeat="gateway in gateways" value="{{gateway.id}}">{{gateway.name}}</option>
+	    		</select>		
+	    	</div>
+	    </div>	  
+	 
+		<div class="control-group">
+	    	<label class="control-label" for="sensorSelect">Sensors</label>
+	    	<div class="controls">
+	    		<select name="sensorSelect" data-ng-model="SensorId" ng-change="findBySensorId()" required>
+	    			<!-- <option value="">Please select</option>-->
+	    			<option selected value="All">All Sensors</option>
+	      			<option data-ng-repeat="sensor in sensors" value="{{sensor.id}}">{{sensor.name}}</option>
+	    		</select>		
+	    	</div>
+	    </div>	 	 
+	  
+		<h2 data-ng-show="!sensorUpdates || sensorUpdates.length" class="text-center">Sensor Updates</h2>	  
+		<div class="table-responsive">
 		  <table class="table table-hover">
 		    <thead>
 		      <tr>
@@ -21,7 +57,7 @@
 		      </tr>
 		    </tbody>
 		  </table>
-	  </div>
+		</div>
 	</div>
 	<h1 data-ng-hide="!sensorUpdates || sensorUpdates.length">No Sensor Updates. <br></h1>
 </section>

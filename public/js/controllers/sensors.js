@@ -87,5 +87,6 @@ angular.module('mean.sensors').controller('SensorsController', ['$scope', '$rout
         });
     };     
     
+    // shouldn't I be initially assigning sensors and gateways and ranches to []. maybe inside an init routine.
     
 }]);

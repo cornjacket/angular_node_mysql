@@ -31,7 +31,7 @@ exports.sensor = function(req, res, next, id) {
 exports.create = function(req, res) {
     // augment the sensor by adding the GatewayId, should I add the userId also
     req.body.UserId = req.user.id;    // what about this, is this needed????????????? DRT
-    console.log('DRT - Testing in app/controllers/sensors.js');
+    //console.log('DRT - Testing in app/controllers/sensors.js');
     req.body.GatewayId = 3; // 3 is Dave's gateway //req.gateway.id; // how does gateway get onto req <------------------- DRT ????????
     // save and return and instance of article on the res object. 
     db.Sensor.create(req.body).then(function(sensor){
@@ -119,8 +119,10 @@ exports.all = function(req, res) {
 /**
  * Article authorizations routing middleware
  */
+// DRT - this doesnt make sense
 exports.hasAuthorization = function(req, res, next) {
-    if (req.sensor.Gateway.id !== req.sensor.id) {  // <----------- need to make sure that the ranch is added to the req
+    console.log("SensorsController.hasAuthorization() Gateway ID's = "+req.sensor.Gateway.id+" "+req.GatewayId)
+    if (req.sensor.Gateway.id !== req.GatewayId) {  // <----------- need to make sure that the ranch is added to the req
       return res.send(401, 'Sensor is not authorized');
     }
     next();

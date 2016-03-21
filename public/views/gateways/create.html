@@ -9,7 +9,7 @@
 		<div class="control-group">
 	    	<label class="control-label" for="ranchSelect">Ranch</label>
 	    	<div class="controls">
-	    		<select name="ranchSelect" data-ng-model="RanchId" required>
+	    		<select name="ranchSelect" data-ng-model="RanchId" ng-change="findGatewaysByRanchId()" required>
 	    			<option value="">Please select</option>
 	      			<option data-ng-repeat="ranch in ranches" value="{{ranch.id}}">{{ranch.name}}</option>
 	    		</select><br>		
