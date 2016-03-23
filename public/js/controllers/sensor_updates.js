@@ -62,15 +62,22 @@ angular.module('mean.sensorUpdates').controller('SensorUpdatesController', ['$sc
     
     $scope.findBySensorId = function() {
         
-        // if sensorId == "ALL", then need to make a list of valid sensorId's from the current list of sensors, then filter on that
         
+        // Re-think findBySensorId, the various cases. Do I need to fix the db record?
+        
+        // Kinda getting confused at what corner case I am trying to avoid for the "All" case
+        // Choosing "ALL" for sensors means that 
+        // if sensorId == "ALL", then need to make a list of valid sensorId's from the current list of sensors, then filter on that
+        // Having the backend send all sensorUpdates is a security hole. only the needed sensorUpdates should be sent.
+        // Also having the front end search through all valid sensorId's
+        // if SensorUpdate has an AccountId, then maybe I
         SensorUpdates.query(function(sensorUpdates) {
-            $scope.sensorUpdates = ($scope.sensorId == "All") ? sensorUpdates : // this is not right, still needs to filter for sensor id 1,2, or 3 only
+            $scope.sensorUpdates = ($scope.SensorId == "All") ? sensorUpdates : // this is not right, still needs to filter for sensor id 1,2, or 3 only
                 sensorUpdates.filter(function(sensorUpdate) {  return (sensorUpdate.SensorId == $scope.SensorId);
             });
             console.log("SensorUpdatesController.findBySensorId() invoked");
             console.log($scope.sensorUpdates);
-            console.log($scope.sensorId);
+            console.log($scope.SensorId);
         });
     };    
     
